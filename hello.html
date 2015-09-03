@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <title></title>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/helloController.js"></script>
+</head>
+<body>
+    
+    <div ng-controller="firstController">
+
+       <div ng-repeat="emp in employees">
+           {{emp.firstName}} -- {{emp.lastName}}
+
+       </div>
+        Enter Emp Name: <input type="text" ng-model="firstEmployee"  />
+        </br>
+        Enter Emp Last name: <input type="text" ng-model="lastEmployee" />
+
+     
+        <input type="button" value="Insert Employee" ng-click="insertEmp()" />
+
+
+    </div>
+
+
+</body>
+</html>
