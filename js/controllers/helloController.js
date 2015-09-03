@@ -17,6 +17,11 @@
             );
     };
 
+    $scope.deps = [{ depName: "IT", location: "Delhi" },
+                     { depName: "Finanace", location: "Hyd" },
+                     { depName: "HR", location: "Lucknow" },
+                     { depName: "Facilities", location: "Kolkata" }]
+
 
 
 

@@ -21,8 +21,11 @@
      
         <input type="button" value="Insert Employee" ng-click="insertEmp()" />
 
-
-    </div>
+        <hr />
+        <div ng-repeat="dep in deps">
+            {{dep.depName}}
+            </div>
+        </div>
 
 
 </body>
