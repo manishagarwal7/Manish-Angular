@@ -61,7 +61,7 @@
                 <div class="form-group col-xs-4">
                     <label>Phones:</label>
                     <div ng-repeat="ph in phoneArr">
-                        <input type="text" class="form-control phone-number" />
+                        <input type="text" ng-model="ph.phone"  />
                     </div>
                 </div>
             </div>            

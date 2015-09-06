@@ -18,6 +18,11 @@
 
     $scope.insertEmp = function () {
 
+        angular.forEach($scope.phoneArr, function (item) {
+            console.log();
+        });
+
+
         $scope.employees.push(
             {
                 firstName: $scope.firstEmployee,
@@ -28,10 +33,10 @@
             );
     };
 
-    $scope.phoneArr = [];
+    $scope.phoneArr = [{phone:1234567890}];
 
     $scope.addphone = function () {
-        $scope.phoneArr.push($scope.phoneArr.length);
+        $scope.phoneArr.push({ phone: 000000000});
     }
 
     $scope.showPhones = function (phones) {
