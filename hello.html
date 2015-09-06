@@ -5,23 +5,74 @@
     <script src="lib/angular.min.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/helloController.js"></script>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
     
     <div ng-controller="firstController">
 
-       <div ng-repeat="emp in employees">
-           {{emp.firstName}} -- {{emp.lastName}}
+        <table class="table table-hover">
+            <thead>
+                <tr>                    
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Emails</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="emp in employees">
+                <tr>                    
+                    <td>
+                        {{emp.firstName}}
+                    </td>
+                    <td>
+                        {{emp.lastName}}
+                    </td>
+                    <td>
+                        {{emp.email}}
+                    </td>
+                    <td>
+                        <a href="#" ng-click="showPhones(emp.phones)">Show Phones</a>
+                    </td>
+                </tr>
+            </tbody>
 
-       </div>
-        Enter Emp Name: <input type="text" ng-model="firstEmployee"  />
-        </br>
-        Enter Emp Last name: <input type="text" ng-model="lastEmployee" />
+        </table>
 
-     
-        <input type="button" value="Insert Employee" ng-click="insertEmp()" />
+        <div role="form">
+            <div class="row">
+                <div class="form-group col-xs-4">
+                    <label>First Name:</label>
+                    <input type="text" ng-model="firstEmployee" class="form-control" />
+                </div>
+                <div class="form-group col-xs-4">
+                    <label>Last Name:</label>
+                    <input type="text" ng-model="lastEmployee" class="form-control" />
+                </div>
+                <div class="form-group col-xs-4">
+                    <label>Email:</label>
+                    <input type="text" ng-model="emailEmployee" class="form-control" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-4">
+                    <label>Phones:</label>
+                    <div ng-repeat="ph in phoneArr">
+                        <input type="text" class="form-control phone-number" />
+                    </div>
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-xs-8">
+                    <input type="button" value="Insert Phone" ng-click="addphone();" class="btn btn-default" />
+                    <input type="button" value="Insert Employee" ng-click="insertEmp()" class="btn btn-default" />
+                </div>
+            </div>
 
-
+        </div>  
     </div>
 
 
