@@ -2,7 +2,10 @@
 
 
     $scope.employees = [
-        { firstName: "Phani", "lastName": "Kumar", phones: [{ phone: "1221212122" }, {phone:"2332342342"}] },
+        {
+            firstName: "Phani", "lastName": "Kumar",
+            phones: [{ phone: "1221212122" }, { phone: "2332342342" }]
+        },
         { firstName: "Raj", "lastName": "Kumar" },
         { firstName: "Kunal", "lastName": "Kumar" },
         { firstName: "Nitesh", "lastName": "Kumar" },

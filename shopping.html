@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <title></title>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/shoppingController.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div ng-controller="shoppingController">
+
+        <div ng-hide="showItem">SHopping application</div>
+
+        <table>
+            <tr> 
+             <th>Description</th>
+            <th>Qty</th>
+                <th>Cost</th>
+                <th>Total</th>
+
+            </tr>
+            <tr ng-repeat="item in invoice.items">
+                <td><input type="text" ng-model="item.description" /></td>
+                <td><input type="text" ng-model="item.qty" /></td>
+                <td><input type="text" ng-model="item.cost" /></td>
+                <td>   {{item.qty * item.cost | currency }}</td>
+                <td>
+                    <a href ng-click="removeItem($index)">[X]</a>   
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+               <a href="#" ng-click="addItem()" >Add Item</a>     
+                </td>
+                <td>  Total:   </td>
+                <td> {{total()}}  </td>
+
+            </tr>
+
+
+        </table>
+    </div>
+
+
+</body>
+</html>
