@@ -17,14 +17,21 @@
                 firstName: $scope.firstEmployee,
                 lastName: $scope.lastEmployee,
                 email: $scope.emailEmployee,
-                phones:
+                phones: $(".phone-number").map(function () { return { phone: $(this).val() } })
             }
             );
     };
 
-    $scope.phones = [];
+    $scope.phoneArr = [];
 
-    $scope.addphone = function () { $scope.phones.push($scope.phones.length); }
+    $scope.addphone = function () { $scope.phoneArr.push($scope.phoneArr.length); }
+
+    $scope.showPhones = function (phones) {
+        if (phones) {
+            var numbers = $.map(phones, function (ph, i) { return i+1 + ". " + ph.phone })
+            alert(numbers.join("\n"));
+        }
+    }
 
 
 
