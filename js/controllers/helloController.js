@@ -1,5 +1,40 @@
 ﻿myApp.controller("firstController", function ($scope) {
 
+    $scope.isOne = function () {
+        if (typeof $scope.message !== 'undefined') {
+            return $scope.message.length == 1;
+        } else {
+            return false;
+        }
+
+    };
+
+    $scope.isTwo = function () {
+        if (typeof $scope.message !== 'undefined') {
+            return $scope.message.length == 2;
+        } else {
+            return false;
+        }
+
+    };
+
+    $scope.isThree = function () {
+        if (typeof $scope.message !== 'undefined') {
+            return $scope.message.length == 3;
+        } else {
+            return false;
+        }
+
+    };
+    $scope.isFourOrMore = function () {
+        if (typeof $scope.message !== 'undefined') {
+            return $scope.message.length >=4;
+        } else {
+            return false;
+        }
+
+    };
+
 
     $scope.employees = [
         {
@@ -10,8 +45,8 @@
             ]
         },
         { firstName: "Raj", "lastName": "Kumar" },
-        { firstName: "Kunal", "lastName": "Kumar" },
-        { firstName: "Nitesh", "lastName": "Kumar" },
+        { firstName: "Kunal", "lastName": "Raj" },
+        { firstName: "Nitesh", "lastName": "Raj" },
         { firstName: "Sundar", "lastName": "Kumar" },
         { firstName: "Ganga", "lastName": "Kumar" }
     ];

@@ -14,6 +14,17 @@
     
     <div ng-controller="firstController">
 
+        <input ng-model="message" />
+        <button class="btn-default" ng-class="{'btn-danger': isOne(), 'btn-warning': isTwo(), 'btn-info':isThree(), 'btn-success': isFourOrMore()}" > Button State </button>
+
+
+        <ul ng-repeat="emp in employees">
+
+            <li ng-if="emp.lastName==='Kumar'">   {{emp.firstName}}</li>
+
+        </ul>
+
+        <hr />
         <table class="table table-hover">
             <thead>
                 <tr>                    
