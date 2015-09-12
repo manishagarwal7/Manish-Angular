@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <title></title>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/tempController.js"></script>
+
+    <script src="js/filters/reverseFilter.js"></script>
+
+    <script src="js/filters/iDontLike.js"></script>
+    <script src="js/filters/joinFilter.js"></script>
+
+</head>
+<body>
+
+    <div ng-controller="tempController">
+
+        {{message}}
+        <hr />
+
+        <ul>
+            <li ng-repeat="emp in employees | iDontLike:'Kunal'">
+
+                <span>{{emp.firstName }}</span>
+            </li>
+
+        </ul>
+
+        <hr />
+        <h2>Join Filter</h2>
+        {{names | join: ','}}
+    </div>
+
+</body>
+</html>
