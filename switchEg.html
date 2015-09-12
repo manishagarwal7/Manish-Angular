@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+<head>
+    <title></title>
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+
+    <input type="text" ng-model="color" />
+
+    <div ng-switch="color">
+
+        <div ng-switch-when="red" style="color:{{color}}"  >  <h1>Red</h1></div>
+        <div ng-switch-when="blue" style="color:{{color}}">  <h1>Blue</h1></div>
+        <div ng-switch-when="yellow" style="color:{{color}}">  <h1>Yellow</h1></div>
+        <div ng-switch-default>  Default</div>
+
+    </div>
+
+
+</body>
+</html>
