@@ -12,6 +12,9 @@ myApp.config(function ($routeProvider) {
     }).when('/departments/:empName', {
         templateUrl: "views/viewDep.html",
         controller:"viewDepController"
+    }).when('/getExample', {
+        templateUrl: "views/httpEample.html",
+        controller:"dataController"
     }).otherwise({
         redirectTo:"/employees"
     })
